@@ -16,3 +16,9 @@
     font-size: 2rem;
     margin-top: 0;
   }
+
+  .summary p {
+    font-size: 0.9rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0 3rem 0;
+  }
