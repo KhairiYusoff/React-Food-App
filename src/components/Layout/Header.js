@@ -8,7 +8,6 @@ const Header = () => {
         <div>
             <header className={classes.header}>
                 <h1>MyFood</h1>
-                <h1>MyFood</h1>
                 <HeaderCartButton />
             </header>
             <div className={classes['main-image']}>
