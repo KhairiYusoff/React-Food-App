@@ -1,9 +1,11 @@
-
+import Header from './components/Layout/Header';
 import './App.css';
 
 function App() {
   return (
-    <div>food</div>
+    <div>
+      <Header />
+    </div>
   );
 }
 
