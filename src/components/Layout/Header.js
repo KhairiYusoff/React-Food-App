@@ -1,15 +1,18 @@
 import React from 'react'
 import meals from '../../assets/meals.avif'
+import classes from './Header.module.css'
+import HeaderCartButton from './HeaderCartButton'
 
 const Header = () => {
     return (
         <div>
-            <header>
+            <header className={classes.header}>
                 <h1>MyFood</h1>
-                <button>Cart</button>
+                <h1>MyFood</h1>
+                <HeaderCartButton />
             </header>
-            <div>
-                <img src={meals} alt="" />
+            <div className={classes['main-image']}>
+                <img src={meals} alt="meals" />
             </div>
         </div>
     )
