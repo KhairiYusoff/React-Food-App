@@ -3,13 +3,18 @@ import classes from './AvailableMeals.module.css'
 import Card from '../UI/Card';
 import MealItem from './MealItem/MealItem';
 import { useEffect } from 'react';
+import { useState } from 'react';
 
 const AvailableMeals = () => {
+
+    const [meals, setMeals] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         const fetchMeals = async () => {
             const response = await fetch('https://react-http-8cea9-default-rtdb.asia-southeast1.firebasedatabase.app/meals.json')
             const responseData = await response.json()
+
             console.log(responseData)
             const loadedMeals = []
             for (const key in responseData) {
@@ -20,12 +25,20 @@ const AvailableMeals = () => {
                     price: responseData[key].price
                 })
             }
-        }
 
+            setMeals(loadedMeals)
+            setIsLoading(false)
+        }
         fetchMeals()
     }, [])
 
-    const mealsList = DUMMY_MEALS.map(meal =>
+    if (isLoading) {
+        return (<section className={classes.mealsLoading}>
+            <p>Is Loading...</p>
+        </section>)
+    }
+
+    const mealsList = meals.map(meal =>
         <MealItem
             key={meal.id}
             id={meal.id}
@@ -40,7 +53,6 @@ const AvailableMeals = () => {
                     {mealsList}
                 </ul>
             </Card>
-
         </div>
     )
 }
