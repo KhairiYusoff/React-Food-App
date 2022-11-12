@@ -7,6 +7,4 @@ const CartContex = React.createContext({
     removeItem: (id) => { }
 })
 
-
-
 export default CartContex
